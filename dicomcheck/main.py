@@ -1,9 +1,14 @@
 import argparse
-from collections import defaultdict, OrderedDict
+import logging
 import os
 import sys
-import pydicom
+from collections import OrderedDict
+from pathlib import Path
+
 import numpy as np
+import pydicom
+
+from dicomcheck import model
 
 SCAN_PARAMS = OrderedDict([
     ((0x0018, 0x0081), 'First TE'),
@@ -47,78 +52,65 @@ SCANNER_PARAMS = OrderedDict([
 def main():
     parser = make_argument_parser()
     args = parser.parse_args()
-    if not args.dicom_path:
+    if not args.reference_dicom_path or not args.new_dicom_path:
         parser.print_help()
         sys.exit(1)
-    compare(args.dicom_path, do_deep_search=args.do_deep_search)
+    compare(Path(args.reference_dicom_path), Path(args.new_dicom_path))
 
 
-def compare(dicom_dir, do_deep_search=False):
-    if not os.path.exists(dicom_dir):
-        print('DICOM directory not found')
-        sys.exit(1)
+def index_dicoms(dicom_dir):
+    logging.info('Reading DICOMs in %s', dicom_dir)
+    dc = model.DicomCollection()
+    for f in dicom_dir.rglob("*"):
+        if f.is_dir():
+            continue
+        logging.info('Reading %s', f)
+        try:
+            dcm = pydicom.read_file(str(f), stop_before_pixels=True)
+            dc.add(f, dcm)
+        except Exception as e:
+            logging.exception(e)
+            continue
+    return dc
 
+
+def compare(reference_dicom_dir, new_dicom_dir):
+    for d in (reference_dicom_dir, new_dicom_dir):
+        if not d.exists():
+            print(d, " not found")
+            sys.exit(1)
     first = True
-    sequences = sorted(os.listdir(dicom_dir))
-    for sequence in sequences:
-        sequence_dir = os.path.join(dicom_dir, sequence)
-        if not os.path.isdir(sequence_dir):
-            continue
-        dcms = try_to_load_dicom(sequence_dir)
-        if not dcms:
-            continue
-        if first:
-            output_patient(dcms[0])
-            output_scanner(dcms[0])
-            first = False
-        output_scan(sequence, sequence_dir, dcms, do_deep_search=do_deep_search)
+    ref_dc = index_dicoms(reference_dicom_dir)
+    new_dc = index_dicoms(new_dicom_dir)
+    for new_patient in new_dc.patients:
+        for new_study in new_dc.patients[new_patient]:
+            for new_series in new_dc.patients[new_patient][new_study]:
+                if new_series.modality_type != "MR" or new_series.tr is None:
+                    continue
+                if first:
+                    output_patient(new_patient)
+                    output_scanner(new_study)
+                    first = False
+                ref_series = ref_dc.get_series(new_series)
+                output_scan(ref_series, new_series)
 
 
-def try_to_load_dicom(sequence_dir):
-    dcms = []
-    try:
-        files = os.listdir(sequence_dir)
-    except FileNotFoundError:
-        return [defaultdict(lambda: None)]
-    for f in sorted(files):
-        path = os.path.join(sequence_dir, f)
-        try:
-            dcm = pydicom.read_file(path)
-        except FileNotFoundError:
-            dcm = defaultdict(lambda: None)
-        except pydicom.errors.InvalidDicomError:
-            continue
-        except IsADirectoryError:
-            continue
-        dcms.append(dcm)
-    return dcms
-
-
-def first_slice_path(sequence_dir):
-    return os.path.join(sequence_dir, sorted(os.listdir(sequence_dir))[0])
-
-
-def output_patient(dcm):
+def output_patient(patient):
+    """Print patient information."""
     print("=== Patient ===")
-
-    for k, desc in PATIENT_PARAMS.items():
-        try:
-            val = dcm.get(k).value
-        except AttributeError:
-            val = ''
-        print_line(desc, val)
+    print_line("Name", patient.name)
+    print_line("ID", patient.id_)
+    print_line("Date of birth", patient.birth_date)
+    print_line("Sex", patient.sex)
 
 
-def output_scanner(dcm):
+def output_scanner(study):
     """Print scanner information."""
     print('=== Scanner ===')
-
-    for k, desc in SCANNER_PARAMS.items():
-        try:
-            val = dcm.get(k).value
-        except AttributeError:
-            val = ''
-        print_line(desc, val)
+    print_line("Scanner manufacturer", study.scanner_manufacturer)
+    print_line("Scanner model", study.scanner_model_name)
+    print_line("Field strength", study.field_strength)
+    print_line("Device serial number", study.device_serial_number)
 
 
 def print_line(description, x):
@@ -128,6 +120,17 @@ def print_line(description, x):
     #     if x != y:
     #         line = '\033[1;31m' + line + '\033[1;m'
     print(line % (description, x))
+
+
+def print_comparison_line(description, attr, a, b):
+    line = '%25s: %50s %50s'
+    x = getattr(a, attr)
+    y = getattr(b, attr)
+    use_colour = sys.stdout.isatty()
+    if use_colour:
+        if x != y:
+            line = '\033[1;31m' + line + '\033[1;m'
+    print(line % (description, x, y))
 
 
 def slice_count(dicom_path):
@@ -185,71 +188,33 @@ def make_param_set(k, dcms, do_deep_search=False):
     return set(params)
 
 
-def output_scan(scan_name, dcm_dir, dcm, do_deep_search=False):
-    print("\n===", scan_name, "===")
-
-    slices = slice_count(dcm_dir)
-    print_line('Number of slices', slices)
-
-    orientation = slice_plane(dcm[0])
-    print_line('Slice orientation', orientation)
-
-    for k in SCAN_PARAMS:
-        try:
-            val = make_param_set(k, dcm, do_deep_search=False)
-        except AttributeError:
-            val = ''
-        if len(val) == 1:
-            val = list(val)[0]
-        elif len(val) > 1:
-            val = ', '.join(list(val))
-        print_line(SCAN_PARAMS[k], val)
-
-
-def slice_plane(dcm):
-    try:
-        slice_dir = slice_direction(dcm)
-    except TypeError:
-        return ''
-    max_el = np.argmax(np.abs(slice_dir))
-    if max_el == 0:
-        return 'sagittal'
-    elif max_el == 1:
-        return 'coronal'
-    elif max_el == 2:
-        return 'axial'
-    else:
-        raise ValueError('Maximum element not in 0-2')
-
-
-def slice_direction(dcm):
-    """Calculate the slice direction from a DICOM header.
-
-    Use the image orientation patient field to calculate the slice direction
-    (as described in
-    http://www.cs.ucl.ac.uk/fileadmin/cmic/Documents/DavidAtkinson/DICOM.pdf).
-    If component one of the scan direction vector is high the scan is in the
-    sagittal plane; high component 2 indicates the coronal plane; high
-    component 3 indicates that slices are in the axial plane.
-    """
-    iop = [float(x) for x in dcm.get((0x0020, 0x0037))]
-    iop1 = np.array(iop[0:3])
-    iop2 = np.array(iop[3:])
-    return np.cross(iop1, iop2)
+def output_scan(ref_series, new_series):
+    print("\n===", new_series.description, "===")
+    print_comparison_line("Number", 'number', ref_series, new_series)
+    print_comparison_line("Date", 'date', ref_series, new_series)
+    print_comparison_line("Time", 'time', ref_series, new_series)
+    print_comparison_line("Modality", 'modality_type', ref_series, new_series)
+    print_comparison_line("Slice plane", 'slice_plane', ref_series, new_series)
+    print_comparison_line("TR", 'tr', ref_series, new_series)
+    print_comparison_line("TE", 'te', ref_series, new_series)
+    print_comparison_line("TI", 'ti', ref_series, new_series)
+    print_comparison_line("Slice thickness", 'slice_thickness', ref_series, new_series)
+    print_comparison_line("Slice gap", 'slice_gap', ref_series, new_series)
+    print_comparison_line("Echo train length", 'echo_train_length', ref_series, new_series)
+    print_comparison_line("Field of view", 'field_of_view', ref_series, new_series)
 
 
 def make_argument_parser():
     parser = argparse.ArgumentParser(description='MRI sequence comparison tool')
     parser.add_argument(
-        'dicom_path',
-        metavar='DICOM_PATH',
-        help='Path to directory containing DICOMs'
+        'reference_dicom_path',
+        metavar='REFERENCE_DICOM_PATH',
+        help='Path to directory containing reference DICOMs'
     )
     parser.add_argument(
-        '--deep',
-        action='store_true',
-        dest='do_deep_search',
-        help='Do deep search for keys'
+        'new_dicom_path',
+        metavar='NEW_DICOM_PATH',
+        help='Path to directory containing new DICOMs'
     )
     return parser
 

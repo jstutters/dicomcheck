@@ -1,0 +1,610 @@
+=== Patient ===
+             Patient name:                                     TEST_04APR2018
+               Patient ID:                                     TEST_04APR2018
+              Patient DoB:                                           19900101
+                Scan date:                                           20180404
+=== Scanner ===
+     Scanner manufacturer:                                            SIEMENS
+       Scanner model name:                                          Skyra_fit
+           Field strength:                                                  3
+     Device serial number:                                              70006
+
+=== EP2D_DIFF_99DIR_ADC_0025 ===
+         Number of slices:                                                 10
+        Slice orientation:                                              axial
+                Second TE:                                                 85
+                       TR:                                                430
+                       TI:                                                   
+          Slice thickness:                                                  5
+                Slice gap:                                                5.5
+        Echo train length:                                                 46
+            Field of view:                                    22.727272932331
+                     Rows:                                                 80
+                  Columns:                                                352
+Reconstruction pixel size:           ['0.37784090638161', '0.37784090638161']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== EP2D_DIFF_99DIR_B0_REVERSEDBLIP_0030 ===
+         Number of slices:                                                 10
+        Slice orientation:                                              axial
+                Second TE:                                                 85
+                       TR:                                                430
+                       TI:                                                   
+          Slice thickness:                                                  5
+                Slice gap:                                                5.5
+        Echo train length:                                                 46
+            Field of view:                                    22.727272932331
+                     Rows:                                                 80
+                  Columns:                                                352
+Reconstruction pixel size:           ['0.37784090638161', '0.37784090638161']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== EP2D_DIFF_99DIR_COLFA_0028 ===
+         Number of slices:                                                 10
+        Slice orientation:                                                   
+                Second TE:                                                   
+                       TR:                                                   
+                       TI:                                                   
+          Slice thickness:                                                   
+                Slice gap:                                                   
+        Echo train length:                                                   
+            Field of view:                                                   
+                     Rows:                                                 80
+                  Columns:                                                352
+Reconstruction pixel size:                                                   
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                   
+     Flip angle (degress):                                                   
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                                   
+
+=== EP2D_DIFF_99DIR_FA_0027 ===
+         Number of slices:                                                 10
+        Slice orientation:                                              axial
+                Second TE:                                                 85
+                       TR:                                                430
+                       TI:                                                   
+          Slice thickness:                                                  5
+                Slice gap:                                                5.5
+        Echo train length:                                                 46
+            Field of view:                                    22.727272932331
+                     Rows:                                                 80
+                  Columns:                                                352
+Reconstruction pixel size:           ['0.37784090638161', '0.37784090638161']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== EP2D_DIFF_99DIR_TENSOR_0029 ===
+         Number of slices:                                                  1
+        Slice orientation:                                                   
+                Second TE:                                                   
+                       TR:                                                   
+                       TI:                                                   
+          Slice thickness:                                                   
+                Slice gap:                                                   
+        Echo train length:                                                   
+            Field of view:                                                   
+                     Rows:                                                   
+                  Columns:                                                   
+Reconstruction pixel size:                                                   
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                   
+     Flip angle (degress):                                                   
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                                   
+
+=== EP2D_DIFF_99DIR_TRACEW_0026 ===
+         Number of slices:                                                 10
+        Slice orientation:                                              axial
+                Second TE:                                                 85
+                       TR:                                                430
+                       TI:                                                   
+          Slice thickness:                                                  5
+                Slice gap:                                                5.5
+        Echo train length:                                                 46
+            Field of view:                                    22.727272932331
+                     Rows:                                                 80
+                  Columns:                                                352
+Reconstruction pixel size:           ['0.37784090638161', '0.37784090638161']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== EP2D_DIFF_WHOLEBRAIN_66_ADC_0013 ===
+         Number of slices:                                                 56
+        Slice orientation:                                              axial
+                Second TE:                                                 80
+                       TR:                                               7600
+                       TI:                                                   
+          Slice thickness:                                                2.5
+                Slice gap:                                               2.75
+        Echo train length:                                                 38
+            Field of view:                                                100
+                     Rows:                                                 88
+                  Columns:                                                 88
+Reconstruction pixel size:                                     ['2.5', '2.5']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== EP2D_DIFF_WHOLEBRAIN_66_COLFA_0016 ===
+         Number of slices:                                                 56
+        Slice orientation:                                                   
+                Second TE:                                                   
+                       TR:                                                   
+                       TI:                                                   
+          Slice thickness:                                                   
+                Slice gap:                                                   
+        Echo train length:                                                   
+            Field of view:                                                   
+                     Rows:                                                 88
+                  Columns:                                                 88
+Reconstruction pixel size:                                                   
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                   
+     Flip angle (degress):                                                   
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                                   
+
+=== EP2D_DIFF_WHOLEBRAIN_66_FA_0015 ===
+         Number of slices:                                                 56
+        Slice orientation:                                              axial
+                Second TE:                                                 80
+                       TR:                                               7600
+                       TI:                                                   
+          Slice thickness:                                                2.5
+                Slice gap:                                               2.75
+        Echo train length:                                                 38
+            Field of view:                                                100
+                     Rows:                                                 88
+                  Columns:                                                 88
+Reconstruction pixel size:                                     ['2.5', '2.5']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== EP2D_DIFF_WHOLEBRAIN_66_TENSOR_0017 ===
+         Number of slices:                                                  1
+        Slice orientation:                                                   
+                Second TE:                                                   
+                       TR:                                                   
+                       TI:                                                   
+          Slice thickness:                                                   
+                Slice gap:                                                   
+        Echo train length:                                                   
+            Field of view:                                                   
+                     Rows:                                                   
+                  Columns:                                                   
+Reconstruction pixel size:                                                   
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                   
+     Flip angle (degress):                                                   
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                                   
+
+=== EP2D_DIFF_WHOLEBRAIN_66_TRACEW_0014 ===
+         Number of slices:                                                 56
+        Slice orientation:                                              axial
+                Second TE:                                                 80
+                       TR:                                               7600
+                       TI:                                                   
+          Slice thickness:                                                2.5
+                Slice gap:                                               2.75
+        Echo train length:                                                 38
+            Field of view:                                                100
+                     Rows:                                                 88
+                  Columns:                                                 88
+Reconstruction pixel size:                                     ['2.5', '2.5']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== EP2D_EP2D_DIFF_WHOLEBRAIN_B0_REVERSEDBLIP__0018 ===
+         Number of slices:                                                 56
+        Slice orientation:                                              axial
+                Second TE:                                                 36
+                       TR:                                               7600
+                       TI:                                                   
+          Slice thickness:                                                2.5
+                Slice gap:                                               2.75
+        Echo train length:                                                 38
+            Field of view:                                                100
+                     Rows:                                                 88
+                  Columns:                                                 88
+Reconstruction pixel size:                                     ['2.5', '2.5']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 90
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_MT_SIEMENS_FLASH3D_HIGH_SAR_TR37MS_0002 ===
+         Number of slices:                                               1056
+        Slice orientation:                                           sagittal
+                Second TE:                14.76, 4.92, 9.84, 7.38, 2.46, 12.3
+                       TR:                                                 37
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  6
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                  9
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_MT_SIEMENS_FLASH3D_HIGH_SAR_TR37MS_0003 ===
+         Number of slices:                                               1056
+        Slice orientation:                                           sagittal
+                Second TE:                14.76, 4.92, 9.84, 7.38, 2.46, 12.3
+                       TR:                                                 37
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  6
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                  9
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_MT_SIEMENS_FLASH3D_HIGH_SAR_TR37MS_0004 ===
+         Number of slices:                                               1056
+        Slice orientation:                                           sagittal
+                Second TE:                14.76, 4.92, 9.84, 7.38, 2.46, 12.3
+                       TR:                                                 37
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  6
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                  9
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_PD_SIEMENS_FLASH3D_0005 ===
+         Number of slices:                                               1408
+        Slice orientation:                                           sagittal
+                Second TE:  14.76, 4.92, 9.84, 7.38, 2.46, 12.3, 19.68, 17.22
+                       TR:                                                 25
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  8
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                  4
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_PD_SIEMENS_FLASH3D_0006 ===
+         Number of slices:                                               1408
+        Slice orientation:                                           sagittal
+                Second TE:  14.76, 4.92, 9.84, 7.38, 2.46, 12.3, 19.68, 17.22
+                       TR:                                                 25
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  8
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                  4
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_PD_SIEMENS_FLASH3D_0007 ===
+         Number of slices:                                               1408
+        Slice orientation:                                           sagittal
+                Second TE:  14.76, 4.92, 9.84, 7.38, 2.46, 12.3, 19.68, 17.22
+                       TR:                                                 25
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  8
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                  4
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_PD_SIEMENS_FLASH3D_S5_DIS2D_0008 ===
+         Number of slices:                                               1408
+        Slice orientation:                                           sagittal
+                Second TE:  14.76, 4.92, 9.84, 7.38, 2.46, 12.3, 19.68, 17.22
+                       TR:                                                 25
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  8
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                  4
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_T1_SIEMENS_FLASH3D_0009 ===
+         Number of slices:                                               1408
+        Slice orientation:                                           sagittal
+                Second TE:  14.76, 4.92, 9.84, 7.38, 2.46, 12.3, 19.68, 17.22
+                       TR:                                                 25
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  8
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 23
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_T1_SIEMENS_FLASH3D_0010 ===
+         Number of slices:                                               1408
+        Slice orientation:                                           sagittal
+                Second TE:  14.76, 4.92, 9.84, 7.38, 2.46, 12.3, 19.68, 17.22
+                       TR:                                                 25
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  8
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 23
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== FIL_T1_SIEMENS_FLASH3D_0011 ===
+         Number of slices:                                               1408
+        Slice orientation:                                           sagittal
+                Second TE:  14.76, 4.92, 9.84, 7.38, 2.46, 12.3, 19.68, 17.22
+                       TR:                                                 25
+                       TI:                                                   
+          Slice thickness:                                                  1
+                Slice gap:                                                   
+        Echo train length:                                                  8
+            Field of view:                                               87.5
+                     Rows:                                                256
+                  Columns:                                                224
+Reconstruction pixel size:                                         ['1', '1']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 23
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== LOCALIZER_0001 ===
+         Number of slices:                                                  9
+        Slice orientation:                                           sagittal
+                Second TE:                                               3.69
+                       TR:                                                7.8
+                       TI:                                                   
+          Slice thickness:                                                  6
+                Slice gap:                                                  9
+        Echo train length:                                                  1
+            Field of view:                                                100
+                     Rows:                                                512
+                  Columns:                                                512
+Reconstruction pixel size:                         ['0.5859375', '0.5859375']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 20
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== LOCALIZER_HWS_0019 ===
+         Number of slices:                                                  6
+        Slice orientation:                                           sagittal
+                Second TE:                                                  4
+                       TR:                                                8.6
+                       TI:                                                   
+          Slice thickness:                                                  7
+                Slice gap:                                                8.4
+        Echo train length:                                                  1
+            Field of view:                                                100
+                     Rows:                                                512
+                  Columns:                                                512
+Reconstruction pixel size:                       ['0.48828125', '0.48828125']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 20
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== PD_MEDIC_2P5MM_UNTERKANTE_C2_0022 ===
+         Number of slices:                                                 42
+        Slice orientation:                                              axial
+                Second TE:                                                 19
+                       TR:                                                 44
+                       TI:                                                   
+          Slice thickness:                                                  5
+                Slice gap:                                                   
+        Echo train length:                                                  5
+            Field of view:                                             84.375
+                     Rows:                                                324
+                  Columns:                                                384
+Reconstruction pixel size:                                     ['0.5', '0.5']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 11
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== PD_MEDIC_2P5MM_UNTERKANTE_C2_0023 ===
+         Number of slices:                                                 40
+        Slice orientation:                                              axial
+                Second TE:                                                 19
+                       TR:                                                 44
+                       TI:                                                   
+          Slice thickness:                                                  5
+                Slice gap:                                                   
+        Echo train length:                                                  5
+            Field of view:                                             84.375
+                     Rows:                                                324
+                  Columns:                                                384
+Reconstruction pixel size:                                     ['0.5', '0.5']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                 11
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== PHOENIXZIPREPORT_0099 ===
+         Number of slices:                                                 15
+        Slice orientation:                                                   
+                Second TE:                                                   
+                       TR:                                                   
+                       TI:                                                   
+          Slice thickness:                                                   
+                Slice gap:                                                   
+        Echo train length:                                                   
+            Field of view:                                                   
+                     Rows:                                                   
+                  Columns:                                                   
+Reconstruction pixel size:                                                   
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                   
+     Flip angle (degress):                                                   
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                                   
+
+=== SAG_T1_0031 ===
+         Number of slices:                                                 17
+        Slice orientation:                                           sagittal
+                Second TE:                                                  9
+                       TR:                                                700
+                       TI:                                                   
+          Slice thickness:                                                  3
+                Slice gap:                                                3.3
+        Echo train length:                                                  8
+            Field of view:                                                100
+                     Rows:                                                640
+                  Columns:                                                640
+Reconstruction pixel size:                             ['0.34375', '0.34375']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  2
+     Flip angle (degress):                                                150
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== T2_TSE_TRA_P2_0021 ===
+         Number of slices:                                                 25
+        Slice orientation:                                              axial
+                Second TE:                                                 94
+                       TR:                                               5510
+                       TI:                                                   
+          Slice thickness:                                                  3
+                Slice gap:                                                3.6
+        Echo train length:                                                 16
+            Field of view:                                                100
+                     Rows:                                                256
+                  Columns:                                                256
+Reconstruction pixel size:                                 ['0.625', '0.625']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  2
+     Flip angle (degress):                                                160
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
+
+=== _SAG_T2_TSE_0020 ===
+         Number of slices:                                                 17
+        Slice orientation:                                           sagittal
+                Second TE:                                                 89
+                       TR:                                               3500
+                       TI:                                                   
+          Slice thickness:                                                2.5
+                Slice gap:                                              2.975
+        Echo train length:                                                 21
+            Field of view:                                                100
+                     Rows:                                                512
+                  Columns:                                                512
+Reconstruction pixel size:                         ['0.4296875', '0.4296875']
+       Frequency encoding:                                                   
+           Phase encoding:                                                   
+       Number of averages:                                                  1
+     Flip angle (degress):                                                160
+        Receive Coil Name:                                                   
+       Transmit Coil Name:                                               Body
